@@ -1,0 +1,25 @@
+[개념정리]
+1. 정형데이터란?
+    항목이 정해진 데이터
+
+2. DBMS란?
+  데이터베이스 매니지 먼트 시스템 
+3. 당신이 알고있는 DBMS의 종류 2가지 이상
+	
+4. SQL은 무엇의 약자?
+   structured Query Language
+
+5. SQL의 종류 3가지 분류
+	DDL DML DCL
+
+6. CRUD는 무엇의 약자?
+  create read update delete
+
+7. 당신이 알고있는 DB클라이언트 프로그램은?
+  MSSMS, HeidSQL ,마리아디비
+
+8. DML중 데이터를 넣을 때 사용하는 구문은?
+ 	insert into	
+
+9. DML중 데이터를 검색할 때 사용하는 구문은?
+	select * from
