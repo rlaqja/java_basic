@@ -11,10 +11,12 @@ public class 회원정보수정 {
 		System.out.println("id/tel순으로 입력하세요.");
 		
 		String id = sc.next();
+		String pw = sc.next();
+		String name = sc.next();
 		String tel = sc.next();
 		
 		MemberDAO2 dao = new MemberDAO2();
-		dao.update(id,tel);
+		dao.update(id,pw,name,tel);
 	}
 
 }
