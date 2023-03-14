@@ -3,11 +3,16 @@ package 화면DB연결;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
+
+import 자바DB연결.BbsDAO;
 
 public class BbsUI {
 
@@ -36,6 +41,31 @@ public class BbsUI {
 		JButton b2 = new JButton("게시물 삭제 완료");
 		JButton b3 = new JButton("게시물 검색 완료");
 
+		b3.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int no2 = Integer.parseInt(no2);
+				System.out.println("게시물 검색 중.");
+				
+				
+				BbsDAO dao = new BbsDAO();
+				BbsVo bag = dao.one(no2);
+				if (bag != null) {
+					t2.setText(bag.getTitle());
+					t3.setText(bag.getContent());
+					t4.setText(bag.getWriter());
+				} else {
+					t2.setText("");
+					t3.setText("");
+					t4.setText("");
+					JOptionPane.showInternalMessageDialog(f, "검색결과 없음");
+
+				}
+				
+				
+			}
+		});
 		
 		FlowLayout flow = new FlowLayout();
 		
