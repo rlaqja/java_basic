@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//alert('회원가입 페이지입니다. 반갑습니다!')
+</script>
+<style type="text/css">
+body {
+	background: pink;
+}
+
+button {
+	background: green;
+}
+
+.t1 {
+	background: yellow;
+	width: 150px;
+	text-align: center;
+}
+
+#b1 {
+	background:orange;
+}
+#b2 {
+	background:teal;
+}
+</style>
+
+</head>
+<body>
+	<h3>상품정보 검색(상세) 페이지</h3>
+	<a href="index.html">
+		<button id="b1">첫페이지로</button>
+	</a>
+	<hr>
+	<a href="one3.jsp?id=100">
+		100번 제품을 보여주세요
+	</a>
+	<a href="one3.jsp?id=101">
+		<button style="background: blue">101</button>
+	</a>
+	<a href="one3.jsp?id=102">
+		<button style="background: blue">102</button>
+	</a>
+	<hr>
+	<form action="one3.jsp" method="get">
+		<table border="1">
+			<tr>
+				<td class="t1">검색할 번호 :</td>
+				<td><input name="id"></td>
+			</tr>
+			<tr>
+				<td colspan="2" class="t1">
+					<button id="b2">게시판 검색한 번호 데이터 전송</button>
+				</td>
+			</tr>
+		</table>
+			</form>
+</body>
+</html>
