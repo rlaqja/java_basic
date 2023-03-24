@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.6.4.js"></script>
+<script type="text/javascript">
+	$(function() {
+		
+		$('#b1').click(function() {
+			$.ajax({
+				url : "money.jsp",
+			data : {
+				money : $('#money').val(),
+				choice : $('#choice').val()
+			},
+			success : function(x) {
+				alert(x)
+				$('#result').html("<font color = red>결제금액은"+ x +"원입니다.</font>")
+				
+			},
+			error : function(e) {
+				alert(e)
+			}
+			})//$
+		})//b2
+		
+
+		$('#b2').click(function() {
+			$.ajax({
+				url : "idCheck.jsp",
+			data : {
+				id : $('#id').val()
+			},
+			success : function(x) {
+				alert(x)
+				$('#result').html("<font color = red>"+ x +"</font>")
+				
+			},
+			error : function(e) {
+				alert(e)
+			}
+			})//$
+		})//b2
+		
+		$('#b3').click(function() {
+			
+			console.log('test')
+			
+			$.ajax({
+				url : "tel.jsp",
+			data : {
+				tel : $('#tel').val(),
+				
+			},
+			success : function(x) {
+				alert(x)
+				$('#result').html("<font color = red>인증번호는"+ x +"입니다.</font>")
+				
+			},
+			error : function(e) {
+				alert(e)
+			}
+			})//$
+		})//b2
+		
+	})//$
+	
+	
+</script>
+</head>
+<body>
+	결제금액 :<input id="money" style="background: yellow" value="1000">
+	<br> 1)계좌이체: 2)신용카드 3)휴대폰 결제
+	<br> 결제수단 :<input id="choice" style="background: yellow" value="1">
+	<button id="b1" style="background: green">결제하기</button>
+	<br>
+
+	<hr color="blue">
+	회원가입 할 id입력:<input id="id" value="root">
+	
+	<button id="b2" style="background: yellow">회원가입시 id중복 체크</button>
+	<br>
+	<hr color="blue">
+	인증받을 전화번호 입력:<input id="tel" value="010315123">
+	<button id="b3" style="background: orange">인증문자 받기</button>
+	<br>
+	<hr color="green">
+	<div id="result">결과 출력되는 곳.</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/jquery-3.6.4.js"></script>
+<script type="text/javascript">
+	$(function() { 
+		$('#b1').click(function() {
+			re = $('#reply').val()
+			divTag = $('#result')
+			divTag.append(re+"<br>")
+		})
+		$('#b2').click(function() {
+			divTag = $('#result')
+			divTag.append("<img src=img/문당훈3.jpg width=100 height=100><br>")
+		})
+		$('#b3').click(function() {
+			re = $('#reply').val()
+			divTag = $('#result')
+			divTag.append(re+"<br>")
+			divTag.append("<img src=img/문당훈3.jpg width=100 height=100><br>")
+			divTag.append(re + "<br>")
+		})
+	})
+</script>
+</head>
+<body>
+		댓글입력: <input id="reply" value="문상훈 귀엽다">
+		
+	<button id="b1">댓글 입력</button>
+	<button id="b2">이미지 입력</button>
+	<button id="b3">글자+이미지 입력</button>
+	<hr>
+ <div id="result"></div>
+</body>
+</html>
