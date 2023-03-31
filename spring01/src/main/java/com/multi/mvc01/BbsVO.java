@@ -1,7 +1,7 @@
 package com.multi.mvc01;
 
 public class BbsVO {
-	private String no;
+	private int no;
 	private String title;
 	private String content;
 	private String writer;
@@ -11,35 +11,20 @@ public class BbsVO {
 	
 	
 	//toString도 만들어주세요.
-
-
-
-
-
-
-	public String getNo() {
-		return no;
-	}
-
-
-
-
-
 	@Override
 	public String toString() {
 		return "BbsVO [no=" + no + ", title=" + title + ", content=" + content + ", writer=" + writer + "]";
 	}
 
 
-
-
-
-	public void setNo(String no) {
-		this.no = no;
+	public int getNo() {
+		return no;
 	}
 
 
-
+	public void setNo(int no) {
+		this.no = no;
+	}
 
 
 	public String getTitle() {

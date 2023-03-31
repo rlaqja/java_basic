@@ -9,18 +9,14 @@
 <script type="text/javascript" src="resources/js/jquery-3.6.4.js"></script>
 <script type="text/javascript">
 $(function() {
-	alert("바디 다 읽기...")
-	//document.write("body를 다 읽었다")
+	//document.write("body를 다~~ 읽었다..")
+	alert("body를 다~~ 읽었다..")
 })
 </script>
 </head>
 <body>
-내일 점심에 뭐 시켜먹을지 벌써 고민중이에용
-아이디 : <input type="id" value="test2">
-패스워드 : <input type="pw" value="test2">
-이름 : <input type="name" value="test2">
-전화번호 : <input type="tel" value="test2">
-<hr color="blue">
-<img src="resources/img/문당훈3.jpg">
+안녕하세요.!! 월요일입니다.!! 스프링에 입문하셨어요~~~!!~!!!<br>
+<hr color="red">
+<img src="resources/img/yes.jpg">
 </body>
 </html>

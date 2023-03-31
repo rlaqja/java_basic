@@ -10,10 +10,46 @@ import java.util.Locale;
 import org.springframework.stereotype.Component;
 
 //import 화면DB연결.MemberVO;
-
+//스프링에 dao는 싱글톤으로 하나만 만들어서 사용할게!라고 설정해야함.
+//2가지방법을 할 수 있음.
+//어노테이션(표시)방법, XML방법
 @Component
 public class MemberDAO { // CRUD
-		
+//특정한 방법으로 실행하는 클래스(model, 방법) 
+	public int login(MemberVO bag) {
+		int result = 0; // 항목명이랑 결과를 담고 있는 테이블이다.
+		try {
+			// 1. 오라클 11g와 연결할 부품 설정
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			System.out.println("1. mySQL과 자바 연결할 부품 설정 성공.");
+			// 2. 오라클 11g에 연결해보자. JAVA ------ Oracle
+			// String url = "jdbc:mysql://localhost:3306:multi";
+			
+			String url = "jdbc:mysql://localhost:3306/multi?serverTimezone=UTC";
+			String user = "root";
+			String password = "1234";
+			Connection con = DriverManager.getConnection(url, user, password);
+			System.out.println("2. mySQL 연결 성공.");
+
+			String sql = "select * from member where id=? and pw=?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setString(1, bag.getId());
+			ps.setString(2, bag.getPw());
+			System.out.println("3. SQL문 부품(객체)으로 만들어주기.");
+			
+			ResultSet rs = ps.executeQuery();
+			System.out.println("4. SQL문 오라클로 보내기 성공.");
+			if (rs.next()) { // 검색결과가 있으면 TRUE 없으면 false
+				System.out.println("검색결과 있음 성공!");
+				result = 1;
+			}
+			System.out.println("검색 결과 없음.");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
 	public ArrayList<MemberVO> list() {
 		ResultSet rs = null; // 항목명 + 결과 데이터를 담고 있는 테이블
 
@@ -123,7 +159,7 @@ public class MemberDAO { // CRUD
 			// 특정한 부품으로 인식하려면 그 부품으로 만들어주어야 한다.
 			// SQL부품으로 만들어주어야 함.
 			// PreparedStatement가 SQL부품!!
-			System.out.println(id);
+
 			String sql = "select * from member where id = ? ";
 			PreparedStatement ps = con.prepareStatement(sql); // PreparedStatement
 			ps.setString(1, id);
