@@ -1,42 +1,84 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-  
+<link href="resources/css/board.css" rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script
+	src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+<style>
+<!--
+body {
+	text-align: center;
+}
+
+/* div {
+	padding : 30px;
+	background-color: #6f42c1;
+	border-radius: 30px;
+	width: 18px;
+	text-align: center;
+	padding: 30px;
+} */
+
+div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 30px;
+	background-color: #6f42c1;
+	border-radius: 30px;
+	text-align: center;
+}
+
+.form-control {
+	margin: 10px;
+}
+
+container {
+	justify-item: center;
+}
+-->
+</style>
 </head>
 <body>
 
-<h3>로그인 화면입니다. </h3>
-<hr color="red">
-<form action="login" method="get">
-	<div class="form-group">
-  <label for="usr">Name:</label>
-  <input type="text" class="form-control" id="usr" style=“width:50px”">
-</div>
-<div class="form-group">
-  <label for="pwd">Password:</label>
-  <input type="password" class="form-control" id="pwd">
-</div>
-	<button type="submit">서버로 전송</button>
-</form>
-<hr color="red">
+	<h3 class="container" style="color: #6f42c1">로그인 화면입니다.</h3>
+	<hr color="#6f42c1">
+	<img src="resources/img/gazegaze.png" style="width: 300px" height="100">
+	<form action="login" method="get">
 
-<h3>회원가입 화면입니다. </h3>
-<hr color="red">
-<form action="insert" method="get">
-	id : <input name="id" value="kakao"><br>
-	pw : <input name="pw" value="1234"><br>
-	name : <input name="name" value="park"><br>
-	tel : <input name="tel" value="011"><br>
-	<button type="submit">서버로 전송</button>
-</form>
-<hr color="red">
-</body>
+		<div class="container">
+			<label for="usr" style="color: #ffc107"
+				style="width:18px;text-align:right;">아이디:</label> <input type="text"
+				class="form-control" id="usr" style="width: 350px"
+				style="text-align:center;"> <label for="pwd"
+				style="color: #ffc107">비밀번호:</label> <input type="password"
+				class="form-control" id="pwd" style="width: 350px"
+				style="width:-600px"> <label> </label>
+
+			<!-- <button type="submit" class="container" style="width:-50px">서버로 전송</button>-->
+			<label></label><br>
+			<button type="submit" class="btn btn-primary btn-lg"
+				style="background: #6f42c1">서버로 전송</button>
+			<br>
+
+		</div>
+		<label></label><br>
+		<button type="button" class="btn btn-primary btn-sm"
+			style="background: #6f42c1">비밀번호 찾기</button>
+		<button type="button" class="btn btn-primary btn-sm"
+			style="background: #6f42c1">아이디 찾기</button>
+		<button type="button" class="btn btn-primary btn-sm"
+			style="background: #6f42c1">회원가입</button>
+	</form>
 </html>
