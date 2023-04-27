@@ -13,28 +13,8 @@
 	src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="js/jquery-3.6.4.js"></script>
-<script type="text/javascript">
-	$(function() {
-		$('#b1').click(function() {
-			$.ajax({
-				url : "data/rank.xml",
-				success : function(doc) {
-					alert("요청성공!" + doc)
-					list = $(doc).find('rank')
-					alert(list.length)
-					for (var i = 0; i < list.length; i++) {
-						//console.log($(list[i]).find('name').text())
-						//console.log($(list[i]).find('tel').text())
-						name = $(list[i]).find('name').text()
-						tel = $(list[i]).find('tel').text()
-						$('#result').append(name + "," + tel + "<br>")
-					}
-				}
-			})
-		})
-	})
-		</script>
+<script type="text/javascript" src="resources/js/jquery-3.6.4.js"></script>
+
 
 <style>
 <!--
@@ -75,22 +55,27 @@ div {
 	<div class="container">
 		<form action="insert" method="get">
 		<label for="usr" style="color: #ffc107" style="width:18px;text-align:right;">아이디</label> 
-		<input  name="id" class="form-control" value="kakao"><br>
+		<input  name="id" class="form-control" ><br>
+		
 		<label for="usr" style="color: #ffc107" style="width:18px;text-align:right;">비밀번호</label> 
 	     <input name="pw" class="form-control" value="1234"><br> 
+	     
 		<label for="usr" style="color: #ffc107" style="width:18px;text-align:right;">이름</label> 
 	     <input  name="name" class="form-control" value="park"><br> 
+	     
 		<label for="usr" style="color: #ffc107" style="width:18px;text-align:right;">전화번호</label> 
 	     <input  name="tel" class="form-control" value="011"><br>
-		<label for="usr" style="color: #ffc107" style="width:18px;text-align:right;">금액</label> 
-	     <input  name="seed" class="form-control" value="1000"><br>
+
 		<label for="usr" style="color: #ffc107" style="width:18px;text-align:right;">닉네임</label> 
 	     <input  name="nickname" class="form-control" value="hodu"><br>
+	     
 		<label for="usr" style="color: #ffc107" style="width:18px;text-align:right;">주소</label> 
 	     <input  name="address" class="form-control" value="011"><br>
+	     
 		<label for="usr" style="color: #ffc107" style="width:18px;text-align:right;">이메일</label> 
 	         <input  name="email" class="form-control" value="011"><br>
-			<button type="submit" class="btn btn-primary btn-lg"
+	         
+			<button id="b1" class="btn btn-primary btn-lg"
 				style="background: #ffc107">서버로 전송</button>
 		</form>
 	</div>

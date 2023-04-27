@@ -11,6 +11,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+
 import com.sun.org.apache.xpath.internal.operations.Mult;
 import java.util.*;
 //import 화면DB연결.MemberVO;
@@ -24,7 +25,18 @@ public class MemberDAO { // CRUD
 	@Autowired
 	SqlSessionTemplate gazee;
 	
+	public MemberVO login(MemberVO bag) {
+
+		System.out.println(bag);
+		MemberVO result = gazee.selectOne("member.login", bag);
+		
+		return result;
+		}
+
+
+	
 	public void insert(MemberVO bag) {
+		System.out.println(bag);
 		gazee.insert("member.create", bag);
 	}
 	
@@ -35,11 +47,17 @@ public class MemberDAO { // CRUD
 	public void update(MemberVO bag) {
 		gazee.update("member.up", bag);
 	}
-
+	
 	public MemberVO one(String id) {
 	MemberVO vo = gazee.selectOne("member.one", id);
 	System.out.println(vo);
 	return vo;
+	}
+	
+	public MemberVO one2(String name) {
+		MemberVO vo2 = gazee.selectOne("member.one2", name);
+		System.out.println(vo2);
+		return vo2;
 	}
 	
 	public List<MemberVO> list() {

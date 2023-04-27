@@ -47,14 +47,14 @@ div {
 </head>
 <body>
 
-	<h3 class="container" style="color: #6f42c1">로그인 화면입니다.</h3>
+	<h3 class="container" style="color: #6f42c1">아이디 찾기 페이지입니다.</h3>
 	<hr color="#6f42c1">
 	<img src="resources/img/gazegaze.png" style="width: 300px" height="100">
-	<form action="login" method="get">
+	<form action="one2" method="get">
 
 		<div class="container">
-			<label for="usr" style="color: #ffc107" style="width:18px;text-align:right;">이메일 입력</label> 
-			    <input type="text" class="form-control" id="usr" style="width: 350px"style="text-align:center;"> 
+			<label for="usr" style="color: #ffc107" style="width:18px;text-align:right;">이름 입력</label> 
+			    <input type="text" class="form-control" name="name" style="width: 350px"style="text-align:center;"> 
 				 <label> </label>
 
 			<!-- <button type="submit" class="container" style="width:-50px">서버로 전송</button>-->
@@ -67,7 +67,7 @@ div {
 		<label></label><br>
 
 		<button type="button" class="btn btn-primary btn-sm"
-			style="background: #6f42c1" onClick="location.href='member.jsp'">로그인화면</button>
-
+			style="background: #6f42c1" onClick="location.href='member.jsp'">로그인 화면</button>
+	
 	</form>
 </html>

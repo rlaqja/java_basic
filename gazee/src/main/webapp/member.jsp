@@ -54,9 +54,9 @@ div {
 
 		<div class="container">
 			<label for="usr" style="color: #ffc107" style="width:18px;text-align:right;">아이디:</label> 
-			    <input type="text" class="form-control" id="usr" style="width: 350px"style="text-align:center;"> 
+			    <input type="text" class="form-control" name="id" style="width: 350px"style="text-align:center;"> 
 				<label for="pwd"style="color: #ffc107">비밀번호:</label> 
-				<input type="password"class="form-control" id="pwd" style="width: 350px"style="width:-600px">
+				<input type="password"class="form-control" name="pw" style="width: 350px"style="width:-600px">
 				 <label> </label>
 
 			<!-- <button type="submit" class="container" style="width:-50px">서버로 전송</button>-->
@@ -64,8 +64,9 @@ div {
 			<button type="submit" class="btn btn-primary btn-lg"
 				style="background: #ffc107">서버로 전송</button>
 			<br>
-
+		
 		</div>
+	</form>
 		<label></label><br>
 		<button type="button" class="btn btn-primary btn-sm"
 			style="background: #6f42c1" onClick="location.href='findpw.jsp'">비밀번호 찾기</button>
@@ -73,6 +74,5 @@ div {
 			style="background: #6f42c1" onClick="location.href='findid.jsp'">아이디 찾기</button>
 		<button type="button" class="btn btn-primary btn-sm"
 			style="background: #6f42c1" onClick="location.href='signup.jsp'">회원가입</button>
-
-	</form>
+</body>
 </html>
