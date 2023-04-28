@@ -21,7 +21,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	
-	<context:component-scan base-package="com.multi.mongDB3" />
+	<context:component-scan base-package="com.multi.mongoDB3" />
 	
 	
 	
