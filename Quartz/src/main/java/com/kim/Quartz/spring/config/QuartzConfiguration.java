@@ -2,6 +2,8 @@ package com.kim.Quartz.spring.config;
 
 import java.util.Properties;
 
+import javax.sql.DataSource;
+
 import org.quartz.TriggerListener;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.quartz.QuartzProperties;
@@ -25,6 +27,9 @@ public class QuartzConfiguration {
 	private JobsListener jobsListener;
 	
 	@Autowired
+	private DataSource dataSource;
+	
+	@Autowired
 	private QuartzProperties quartzProperties;
 	
 	@Bean
@@ -43,6 +48,7 @@ public class QuartzConfiguration {
 		schedulerFactoryBean.setGlobalTriggerListeners(triggersListener);
 		schedulerFactoryBean.setGlobalJobListeners(jobsListener);
 		schedulerFactoryBean.setOverwriteExistingJobs(true);
+		schedulerFactoryBean.setDataSource(dataSource);
 		schedulerFactoryBean.setQuartzProperties(properties);
 		schedulerFactoryBean.setWaitForJobsToCompleteOnShutdown(true);
 		return schedulerFactoryBean;

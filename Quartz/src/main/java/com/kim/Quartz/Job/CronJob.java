@@ -28,7 +28,7 @@ public class CronJob extends QuartzJobBean{
 		log.info("==========================================================");
 		log.info("CronJob started :: sleep : {} jobId : {}jobKey : {} - {}",MAX_SLEEP_IN_SECONDS,jobId, jobkey,currThread.getName());
 
-		IntStream.range(0, 10).forEach(i->{
+		IntStream.range(0, 5).forEach(i->{
 		log.info("CronJob Counting - {}", i);
 		try {
 			TimeUnit.SECONDS.sleep(MAX_SLEEP_IN_SECONDS);

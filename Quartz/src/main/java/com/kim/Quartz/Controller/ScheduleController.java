@@ -65,7 +65,7 @@ public class ScheduleController {
 
 	@RequestMapping(value = "/jobs", method = RequestMethod.GET)
 	public JobStatusResponse getAllJobs() {
-		return scheduleService.getAllJob();
+		return scheduleService.getAllJobs();
 		//getAllJobs이게 안되어서 s를 빼봄  만약 오류가 발생하면 여기도 기억하기
 	}
 	

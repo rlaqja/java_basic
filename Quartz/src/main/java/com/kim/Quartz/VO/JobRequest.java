@@ -4,7 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.quartz.JobDataMap;
-import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat
+;import com.kim.Quartz.model.JobType;
 
 import java.time.LocalDateTime;
 
@@ -20,7 +21,15 @@ public class JobRequest {
 	private LocalDateTime startDateAt;
 	private long repeatIntervalInSeconds;
 	private int repeatCount;
-	
+		
 	private String cronExpression;
 	private JobDataMap jobDataMap;
+	
+	public boolean isJobTypeSimple() {
+		return this.cronExpression == null;
+	}
+	
+	public JobType getCurrentJobType() {
+		return isJobTypeSimple() ? JobType.SIMPLE : JobType.CRON;
+	}
 }

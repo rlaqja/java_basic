@@ -7,7 +7,7 @@ import com.kim.Quartz.VO.JobRequest;
 import com.kim.Quartz.VO.JobStatusResponse;
 
 public interface ScheduleService {
-	JobStatusResponse getAllJob();
+
 	
 	boolean isJobRunning(JobKey jobKey);
 	
@@ -22,6 +22,8 @@ public interface ScheduleService {
 	boolean resumeJob(JobKey jobKey);
 	
 	String getJobState(JobKey jobKey);
+
+	JobStatusResponse getAllJobs();
 	
 	
 }

@@ -33,8 +33,9 @@ import java.util.List;
 import java.util.Set;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Matchers.anyObject;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doNothing;
+import org.mockito.Mockito;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -65,7 +66,7 @@ public class ScheduleServiceImplTest {
     @Test
     public void addJob() {
         JobRequest jobRequest = new JobRequest();
-        jobRequest.setCronExpression("0/10 * * ? * *");
+        jobRequest.setCronExpression("0/5 * * ? * *");
         jobRequest.setJobName(jobName);
         jobRequest.setJobGroup(groupName);
 
@@ -115,21 +116,21 @@ public class ScheduleServiceImplTest {
         boolean result = scheduleService.resumeJob(jobKey);
         assertThat(result).isTrue();
 
-        verify(schedulerFactoryBean).getScheduler();
+        verify(schedulerFactoryBean).getScheduler(); 
         verify(scheduler).resumeJob(jobKey);
     }
 
     @Test
     public void getAllJobs() throws SchedulerException {
-        List triggers = new ArrayList();
+    	List triggers = new ArrayList();
         addMockTrigger(triggers, jobName, groupName);
-
+        		
         when(schedulerFactoryBean.getScheduler()).thenReturn(scheduler);
         when(scheduler.getJobGroupNames()).thenReturn(jobGroupNames);
-        when(scheduler.getJobKeys(anyObject())).thenReturn(jobKeySet);
-        when(scheduler.getJobDetail(anyObject())).thenReturn(new JobDetailImpl(jobName, groupName, MockJob.class));
-        when(scheduler.getTriggersOfJob(anyObject())).thenReturn(triggers).thenReturn(triggers);
-        when(scheduler.getTriggerState(anyObject())).thenReturn(Trigger.TriggerState.BLOCKED);
+        when(scheduler.getJobKeys(any())).thenReturn(jobKeySet);
+        when(scheduler.getJobDetail(any())).thenReturn(new JobDetailImpl(jobName, groupName, MockJob.class));
+        when(scheduler.getTriggersOfJob(any())).thenReturn(triggers).thenReturn(triggers);
+        when(scheduler.getTriggerState(any())).thenReturn(Trigger.TriggerState.BLOCKED);
 
         JobStatusResponse result = scheduleService.getAllJobs();
         log.info("result : {}", result);
@@ -138,10 +139,10 @@ public class ScheduleServiceImplTest {
 
         verify(schedulerFactoryBean, times(3)).getScheduler();
         verify(scheduler).getJobGroupNames();
-        verify(scheduler).getJobKeys(anyObject());
-        verify(scheduler).getJobDetail(anyObject());
-        verify(scheduler, times(2)).getTriggersOfJob(anyObject());
-        verify(scheduler).getTriggerState(anyObject());
+        verify(scheduler).getJobKeys(any());
+        verify(scheduler).getJobDetail(any());
+        verify(scheduler, times(2)).getTriggersOfJob(any());
+        verify(scheduler).getTriggerState(any());
     }
 
     @Test

@@ -17,7 +17,7 @@ public class TestUtils {
         Date now = new Date();
         TriggerFiredBundle firedBundle = new TriggerFiredBundle(jobDetail, new SimpleTriggerImpl(), null, false, now, now, now, now);
         JobExecutionContextImpl jobExecutionContext = null;
-
+        		
         try {
             jobExecutionContext = new JobExecutionContextImpl(scheduler, firedBundle, (Job) clazz.newInstance());
         } catch (InstantiationException | IllegalAccessException e) {

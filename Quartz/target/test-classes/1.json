@@ -1,0 +1,55 @@
+{
+  "numOfAllJobs": 6,
+  "numOfGroups": 1,
+  "numOfRunningJobs": 2,
+  "jobs": [
+    {
+      "jobName": "job1",
+      "groupName": "DEFAULT",
+      "jobStatus": "SCHEDULED",
+      "scheduleTime": "2019-09-09 22:08:16",
+      "lastFiredTime": "2019-09-09 22:09:00",
+      "nextFireTime": "2019-09-09 22:10:00"
+    },
+    {
+      "jobName": "job2",
+      "groupName": "DEFAULT",
+      "jobStatus": "SCHEDULED",
+      "scheduleTime": "2019-09-09 22:08:17",
+      "lastFiredTime": "2019-09-09 22:09:00",
+      "nextFireTime": "2019-09-09 22:11:00"
+    },
+    {
+      "jobName": "job3",
+      "groupName": "DEFAULT",
+      "jobStatus": "SCHEDULED",
+      "scheduleTime": "2019-09-09 22:08:10",
+      "lastFiredTime": "2019-09-09 22:09:00",
+      "nextFireTime": "2019-09-09 22:11:00"
+    },
+    {
+      "jobName": "cronJob1",
+      "groupName": "DEFAULT",
+      "jobStatus": "RUNNING",
+      "scheduleTime": "2019-09-09 22:08:16",
+      "lastFiredTime": "2019-09-09 22:10:00",
+      "nextFireTime": "2019-09-09 22:11:00"
+    },
+    {
+      "jobName": "cronJob2",
+      "groupName": "DEFAULT",
+      "jobStatus": "RUNNING",
+      "scheduleTime": "2019-09-09 22:08:16",
+      "lastFiredTime": "2019-09-09 22:10:00",
+      "nextFireTime": "2019-09-09 22:15:00"
+    },
+    {
+      "jobName": "simpleJob",
+      "groupName": "DEFAULT",
+      "jobStatus": "SCHEDULED",
+      "scheduleTime": "2019-09-09 22:08:16",
+      "lastFiredTime": "2019-09-09 22:10:16",
+      "nextFireTime": "2019-09-09 22:10:46"
+    }
+  ]
+}
